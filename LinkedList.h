@@ -17,6 +17,8 @@ class LinkedList{
         int length;
 
     public:
+        int checker();
+        string returnheadfix();
         LinkedList();
         Ingredient *head;
         //insert new at end of current list

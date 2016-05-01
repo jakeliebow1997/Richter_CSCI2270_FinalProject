@@ -1,4 +1,8 @@
 #include "LinkedList.h"
+#include <iostream>
+#include <string>
+#include <ostream>
+#include <sstream>
 
 //LinkedList Class implementation
 LinkedList::LinkedList(){
@@ -71,11 +75,22 @@ void LinkedList::printList(int index){
         cursor = temp->next;
     }
 }
+
 string LinkedList::returnHead(){
+
     Ingredient *temp = head->next;
-    return temp->name;
+    string thing=temp->name;
+    return thing;
 }
 
+int LinkedList::checker()
+{
+    if (head->next==NULL)
+        {
+            return 0;
+        }
+        return 1;
+}
 void LinkedList::histogramPrintList(int index){
     Ingredient *temp = head;
     Ingredient *cursor = head;
