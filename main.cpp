@@ -89,6 +89,7 @@ int main(int argc, char *argv[]){
                     newIngredient->name = line;
                     newIngredient->classification = line[1];
                     compHT.insertItem(newIngredient);
+
                 }
                 //if rest of ingredients, no adjustment
                 else{
@@ -111,7 +112,11 @@ int main(int argc, char *argv[]){
                     cin.ignore();
                     //call compare function for each item
                     for(int i = 0; i < 26; i++){
-                       Ingredient *item = ht.returnItem(i + 1);
+                        while (ht.returnItem(i)==NULL)
+                            {
+                                i+=1;
+                            }
+                       Ingredient *item = ht.returnItem(i);
                        cout<<item->name<<endl;
                     }
 
